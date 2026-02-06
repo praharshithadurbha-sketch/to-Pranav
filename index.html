@@ -9,10 +9,10 @@
     margin: 0;
     height: 100vh;
     overflow: hidden;
-    background:
-      url("https://i.imgur.com/8QfQKzL.png"),
-      linear-gradient(135deg, #ff5f8f, #ff1f4b);
-    background-size: 120px, cover;
+    background-image: url("bg-collage.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: repeat;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -64,23 +64,26 @@
   }
 
   .letter {
-    background: url("https://i.imgur.com/9H7JZ9A.png");
+    background-image: url("letter-bg.jpg");
     background-size: cover;
+    background-position: center;
     padding: 35px;
-    border-radius: 15px;
+    border-radius: 18px;
     color: #5a1a2b;
     font-size: 15px;
     margin-top: 20px;
     text-align: left;
     animation: floatLetter 4s ease-in-out infinite;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.3);
   }
 
-  /* 💓 floating hearts & kisses */
+  /* floating hearts & kisses */
   .float {
     position: absolute;
     bottom: -50px;
     animation: floatUp linear infinite;
     opacity: 0.8;
+    pointer-events: none;
   }
 
   @keyframes floatUp {
@@ -108,8 +111,9 @@
 </div>
 
 <script>
-  // 💓 floating hearts + 💋 kisses
+  // floating hearts + kisses
   const emojis = ["💗","💖","💞","💘","💋"];
+
   setInterval(() => {
     const span = document.createElement("span");
     span.className = "float";
@@ -189,3 +193,4 @@
 </body>
 </html>
 <!-- made with love -->
+
