@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>For Pranav 💖</title>
+
+<style>
+  body {
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    background:
+      url("https://i.imgur.com/8QfQKzL.png"),
+      linear-gradient(135deg, #ff5f8f, #ff1f4b);
+    background-size: 120px, cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Georgia', serif;
+  }
+
+  .box {
+    background: rgba(255,255,255,0.96);
+    padding: 35px;
+    border-radius: 25px;
+    text-align: center;
+    width: 360px;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.25);
+    animation: fadePop 0.8s ease;
+    z-index: 10;
+  }
+
+  h1, h2 {
+    color: #ff2f68;
+  }
+
+  p {
+    color: #444;
+    font-size: 16px;
+  }
+
+  button {
+    padding: 12px 25px;
+    border-radius: 30px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 12px;
+    transition: transform 0.2s ease;
+  }
+
+  button:hover {
+    transform: scale(1.08);
+  }
+
+  .yes {
+    background: #ff2f68;
+    color: white;
+  }
+
+  .no {
+    background: #ddd;
+    position: absolute;
+  }
+
+  .letter {
+    background: url("https://i.imgur.com/9H7JZ9A.png");
+    background-size: cover;
+    padding: 35px;
+    border-radius: 15px;
+    color: #5a1a2b;
+    font-size: 15px;
+    margin-top: 20px;
+    text-align: left;
+    animation: floatLetter 4s ease-in-out infinite;
+  }
+
+  /* 💓 floating hearts & kisses */
+  .float {
+    position: absolute;
+    bottom: -50px;
+    animation: floatUp linear infinite;
+    opacity: 0.8;
+  }
+
+  @keyframes floatUp {
+    from { transform: translateY(0); }
+    to { transform: translateY(-110vh); }
+  }
+
+  @keyframes fadePop {
+    0% { opacity: 0; transform: scale(0.8); }
+    100% { opacity: 1; transform: scale(1); }
+  }
+
+  @keyframes floatLetter {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+  }
+</style>
+</head>
+
+<body>
+
+<div class="box" id="content">
+  <h1>hie bangaram 💗</h1>
+  <button class="yes" onclick="step1()">hieee 🥺</button>
+</div>
+
+<script>
+  // 💓 floating hearts + 💋 kisses
+  const emojis = ["💗","💖","💞","💘","💋"];
+  setInterval(() => {
+    const span = document.createElement("span");
+    span.className = "float";
+    span.innerHTML = emojis[Math.floor(Math.random() * emojis.length)];
+    span.style.left = Math.random() * 100 + "vw";
+    span.style.fontSize = Math.random() * 20 + 20 + "px";
+    span.style.animationDuration = Math.random() * 3 + 4 + "s";
+    document.body.appendChild(span);
+
+    setTimeout(() => span.remove(), 7000);
+  }, 400);
+
+  function step1() {
+    document.getElementById("content").innerHTML = `
+      <h2>I have a question for you 🤭</h2>
+      <button class="yes" onclick="step2()">Yes, ask me 💕</button>
+      <button class="no" onmouseover="runAway(this)">Nah, don’t 🙄</button>
+    `;
+  }
+
+  function step2() {
+    document.getElementById("content").innerHTML = `
+      <h2>Will you be my Valentine? 💌</h2>
+      <button class="yes" onclick="finalStep()">YES 💖</button>
+      <button class="no" onmouseover="runAway(this)">No 🙃</button>
+    `;
+  }
+
+  function finalStep() {
+    document.getElementById("content").innerHTML = `
+      <h1>I knew it 😌💘</h1>
+      <p>You were never escaping, honestly.</p>
+
+      <div class="letter">
+        My love,<br><br>
+
+        I am so unbelievably thankful to the universe for your existence
+        and for you being my Valentine.
+        <br><br>
+
+        You are officially locked with me 😠 forever 😠💖  
+        No refunds. No escape routes.
+        <br><br>
+
+        I can’t wait for us to go on dates, laugh endlessly,
+        and spend the best time together in all our future Valentines.
+        <br><br>
+
+        I’m absolutely certain that nothing will change —
+        except you growing even more handsome (hehehe).
+        <br><br>
+
+        TMI timeee 👀  
+        I’ll be ovulating on Valentine’s Day sooo… 😉
+        <br><br>
+
+        I miss you.  
+        I love you so, so much, Mr. Boyfieee.
+        <br><br>
+
+        Muahhhhh 💋💋💋  
+        <br><br>
+
+        I reallllyyy love you, Pranavvluuuu 💗💖💕💞💘
+      </div>
+    `;
+  }
+
+  function runAway(btn) {
+    const x = Math.random() * (window.innerWidth - 120);
+    const y = Math.random() * (window.innerHeight - 120);
+    btn.style.left = x + "px";
+    btn.style.top = y + "px";
+  }
+</script>
+
+</body>
+</html>
+<!-- made with love -->
